@@ -83,7 +83,7 @@ jobs:
           cd frontend/
           npm run test
 
-  build_frontend_and_push_to_docker_hib:
+  build_frontend_and_push_to_docker_hub:
     name: Push frontend Docker image to Docker Hub
     runs-on: ubuntu-latest
     needs: frontend_tests
