@@ -18,15 +18,15 @@ services:
     depends_on:
       - db
     volumes:
-      - static:/backend_static
-      - media:/app/media/cats/images
+      - static:/backend_static/
+      - media:/app/media/
 
   frontend:
     env_file: .env
     build: ./frontend/
     command: cp -r /app/build/. /frontend_static/
     volumes:
-      - static:/frontend_static
+      - static:/frontend_static/
 
   gateway:
     build: ./nginx/
