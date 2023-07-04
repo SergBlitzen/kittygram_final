@@ -19,7 +19,7 @@ services:
       - db
     volumes:
       - kittygram_static:/backend_static/
-      - kittygram_media:/app/media/
+      - kittygram_media:/app/media/cats/images/
 
   frontend:
     image: sergblitzen/kittygram_frontend
@@ -33,6 +33,6 @@ services:
     env_file: .env
     volumes:
       - kittygram_static:/static/
-      - kittygram_media:/app/media/
+      - kittygram_media:/app/media/cats/images/
     ports:
       - 9000:80
