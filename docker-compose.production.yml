@@ -18,21 +18,21 @@ services:
     depends_on:
       - db
     volumes:
-      - kittygram_static:/backend_static/
-      - kittygram_media:/app/media/
+      - kittygram_static:/backend_static
+      - kittygram_media:/app/media
 
   frontend:
     image: sergblitzen/kittygram_frontend
     env_file: .env
     command: cp -r /app/build/. /frontend_static/
     volumes:
-      - kittygram_static:/frontend_static/
+      - kittygram_static:/frontend_static
 
   gateway:
     image: sergblitzen/kittygram_gateway
     env_file: .env
     volumes:
-      - kittygram_static:/static/
-      - kittygram_media:/app/media/
+      - kittygram_static:/static
+      - kittygram_media:/app/media
     ports:
       - 9000:80
