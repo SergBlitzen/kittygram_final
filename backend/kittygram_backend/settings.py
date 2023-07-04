@@ -2,16 +2,20 @@
 import os
 from pathlib import Path
 
+from dotenv import load_dotenv
+
+
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = str(os.getenv('SECRET_KEY'))
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = True
 
 ALLOWED_HOSTS = [
     '158.160.3.183',
-    '127.0.0.1:9000',
+    '127.0.0.1',
     'localhost',
     'kittygramv1.ddns.net'
 ]
