@@ -11,6 +11,7 @@ services:
     env_file: .env
     volumes:
       - kittygram_pg_data:/var/lib/postgresql/data
+      - kittygram_media:/app/media/cats/images/
 
   backend:
     image: sergblitzen/kittygram_backend
