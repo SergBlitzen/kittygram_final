@@ -15,7 +15,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '158.160.3.183',
-    '127.0.0.1',
+    '127.0.0.1:9000',
     'localhost',
     'kittygramv1.ddns.net'
 ]
