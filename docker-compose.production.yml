@@ -35,4 +35,4 @@ services:
       - kittygram_static:/static/
       - kittygram_media:/app/media/
     ports:
-      - 8000:80
+      - 9000:80
