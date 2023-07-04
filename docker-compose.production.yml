@@ -11,7 +11,6 @@ services:
     env_file: .env
     volumes:
       - kittygram_pg_data:/var/lib/postgresql/data
-      - kittygram_media:/var/www/kittygram/media/
 
   backend:
     image: sergblitzen/kittygram_backend
@@ -20,7 +19,7 @@ services:
       - db
     volumes:
       - kittygram_static:/backend_static/
-      - kittygram_media:/var/www/kittygram/media/
+      - kittygram_media:/app/media/
 
   frontend:
     image: sergblitzen/kittygram_frontend
@@ -34,6 +33,6 @@ services:
     env_file: .env
     volumes:
       - kittygram_static:/static/
-      - kittygram_media:/var/www/kittygram/media/
+      - kittygram_media:/app/media/
     ports:
       - 9000:80
