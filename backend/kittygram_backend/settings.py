@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
-DEBUG = False
+DEBUG = bool(os.getenv('DEBUG'))
 
 ALLOWED_HOSTS = [
     '158.160.3.183',
@@ -20,18 +20,26 @@ ALLOWED_HOSTS = [
     'kittygramv1.ddns.net'
 ]
 
-INSTALLED_APPS = [
+DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+]
+
+THIRD_PARTY_APPS = [
     'rest_framework.authtoken',
     'rest_framework',
     'djoser',
+]
+
+LOCAL_APPS = [
     'cats.apps.CatsConfig',
 ]
+
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
