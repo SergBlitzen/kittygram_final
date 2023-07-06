@@ -46,4 +46,5 @@ CI/CD приложения автоматизирован и работает п
 <br>```sudo docker compose -f docker-compose.production.yml exec backend cp -r /app/collected_static/. /backend_static/static/```
 
 ### Об авторе
-
+Backend and assembly by Serg Blitzen
+Assets by Yandex.Practicum
