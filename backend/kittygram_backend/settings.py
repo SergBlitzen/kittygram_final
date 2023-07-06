@@ -11,14 +11,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
-DEBUG = bool(os.getenv('DEBUG'))
+DEBUG = os.getenv('DEBUG')
 
-ALLOWED_HOSTS = [
-    '158.160.3.183',
-    '127.0.0.1',
-    'localhost',
-    'kittygramv1.ddns.net'
-]
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(' ')
 
 DJANGO_APPS = [
     'django.contrib.admin',
